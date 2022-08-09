@@ -6,10 +6,13 @@ import '../styles/LandingPage.css';
 const [showing, setShowing] = useState(false)
 const [cities, setCities] = useState(false)
 
-let states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 
+let states = [{name: 'Alabama', cities: ["Birmingham", "Cuba", "Decatur", "Empire", "Harvest", "Homewood", "Hoover", "Huntsville", "Irondale", "Ladonia", "Leeds", "Madison", "McCalla", "Mobile", "Montgomery", "Tillmans Corner", "Tuscaloosa", "Uniontown"]}, 
+'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 
 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 
 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania',
  'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming']
+
+
 
 
 
@@ -23,7 +26,7 @@ function LandingPage(props) {
                 <label>
                     Name:
                     <input type="text" name="state" value="" />
-                    <select className='state-list' placeholder='State'>
+                    <select className='state-list' placeholder='State' onChange={this.changeState}>
                     <option value="Alabama">Alabama</option>
                     <option value="Alaska">Alaska</option>
                     <option value="Arizona">Arizona</option>
@@ -79,7 +82,12 @@ function LandingPage(props) {
                 <label>
                     Name:
                     <input type="city" name="city" value="" />
-
+                    <select className="form-select" placeholder="City">
+                    <option>City</option>
+                        {this.states.cities.map((e, key) => {
+                            return <option key={key}>{e}</option>;
+                        })}
+                        </select>
                 </label>
                 <input type="submit" value="Submit" />
             </form>
