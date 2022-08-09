@@ -6,7 +6,7 @@ import '../styles/pages/LandingPage.css';
 function LandingPage(props) {
 
     return (
-        <main className='results-page'>
+        <main className='landing-page'>
  
         </main>
     );
