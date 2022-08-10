@@ -1,8 +1,4 @@
-@import url(accessories.css);
-
-$item-color: #f7f8fc;
-$background-color: #edf0fb;
-$recoms-color: #d1e7fb;
+@import './accessories.scss';
 
 body {
     background-color: $background-color;
@@ -49,6 +45,8 @@ body {
         .RecTitle {
             margin-top: 3vh;
             margin-bottom: 1vh;
+            font-family: $heading-font;
+            font-weight: $heading-font-weight;
         }
         .recoms {
             padding: 1.5vh;
