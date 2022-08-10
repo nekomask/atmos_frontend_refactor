@@ -1,3 +1,53 @@
 @import url(accessories.css);
+body {
+  background-color: #edf0fb;
+}
+
+.results-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.results-page .results-location-icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.results-page .results-score-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.RecsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.RecsContainer .blurb-container {
+  background-color: #f7f8fc;
+  border: 1px solid #edf0fb;
+  border-radius: 1.5vh;
+  padding: 2vh;
+}
+.RecsContainer .RecomsContainer {
+  background-color: #d1e7fb;
+  border: 1px solid #edf0fb;
+  border-radius: 1.5vh;
+  margin: 2vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.RecsContainer .RecomsContainer .RecTitle {
+  margin-top: 3vh;
+  margin-bottom: 1vh;
+}
+.RecsContainer .RecomsContainer .recoms {
+  padding: 1.5vh;
+}
 
 /*# sourceMappingURL=ResultsPage.css.map */

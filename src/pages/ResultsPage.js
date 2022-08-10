@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import ScoreMeter from '../components/ScoreMeter';
+import Recs from '../components/Recs';
 
 import '../styles/css/ResultsPage.css';
 
@@ -23,8 +24,8 @@ function ResultsPage(props)
             <div className='results-container'>
                 <div className="results-location-container">
                     <div className="results-location-icon-container">
-                        <img src="https://i.imgur.com/1gOHVQX.png" alt="results-location-icon" className="results-location-icon" />
-                        {fixUppercase(props.city)}, {fixUppercase(props.USState)}
+                        {/* <img src="https://i.imgur.com/1gOHVQX.png" alt="results-location-icon" className="results-location-icon" /> */}
+                        <p id="city-state">{fixUppercase(props.city)}, {fixUppercase(props.USState)}</p>
                     </div>
                     <div className='results-score-container'>
                         <p>Air Quality Score</p>
@@ -33,9 +34,10 @@ function ResultsPage(props)
                             <ScoreMeter score={props.score} />
                         </div>
                     </div>
-                    <div className="results-activity-container">
 
-                    </div>
+                </div>
+                <div className="results-activity-container">
+                    <Recs aqi={props.score}/>
                 </div>
             </div>
             <div className='results-activities-container'>
