@@ -1,6 +1,9 @@
-@import url(accessories.css);
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+@import url("https://rsms.me/inter/inter.css");
+/* === COLOR VARS === */
+/* === FONT VARS === */
 body {
-  background-color: #edf0fb;
+  background-color: linear-gradient(to bottom, #EFF1F8, #EBEFFC);
 }
 
 .results-page {
@@ -28,13 +31,13 @@ body {
 }
 .RecsContainer .blurb-container {
   background-color: #f7f8fc;
-  border: 1px solid #edf0fb;
+  border: 1px solid linear-gradient(to bottom, #EFF1F8, #EBEFFC);
   border-radius: 1.5vh;
   padding: 2vh;
 }
 .RecsContainer .RecomsContainer {
   background-color: #d1e7fb;
-  border: 1px solid #edf0fb;
+  border: 1px solid linear-gradient(to bottom, #EFF1F8, #EBEFFC);
   border-radius: 1.5vh;
   margin: 2vh;
   display: flex;
@@ -45,6 +48,8 @@ body {
 .RecsContainer .RecomsContainer .RecTitle {
   margin-top: 3vh;
   margin-bottom: 1vh;
+  font-family: "Fredoka One", cursive;
+  font-weight: 100;
 }
 .RecsContainer .RecomsContainer .recoms {
   padding: 1.5vh;

@@ -1,9 +1,18 @@
 // SASS COMMAND: sass --watch ./src/styles/scss:./src/styles/css
 
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+@import url('https://rsms.me/inter/inter.css');
+
 /* === COLOR VARS === */
-
-
-
+$item-color: #f7f8fc;
+$background-color: linear-gradient(to bottom,  #EFF1F8, #EBEFFC);
+$recoms-color: #d1e7fb;
+$recoms-border-color: white;
+$input-color: #4568AD;
 
 
 /* === FONT VARS === */
+$paragraph-font: 'Inter', sans-serif;
+$heading-font:  'Fredoka One', cursive;
+$heading-font-weight: 100;
+$logo-font: rooney-sans, sans-serif;
