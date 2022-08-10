@@ -8,6 +8,7 @@ export default function ScoreMeter(props)
     trackWidth = 10,
     trackColor = "#D9D9D9",
     indicatorWidth = 10,
+    indicatorCap = ""
   } = props
 
   // Defines the meter
@@ -20,10 +21,11 @@ export default function ScoreMeter(props)
   // Defines the icon
   const iconTopPosition = size / 2 - 20;
   const iconLeftPosition = size / 4 + 5;
-  const maxScore = 500;
+  const maxScore = 1000;
   const iconInitialAngle = -30;
-  const iconRotation = maxScore / arc * score / 4;
-  const iconFinalAngle = iconInitialAngle + iconRotation;
+  const iconRotation = maxScore / arc * 0 / 4;
+  // const iconFinalAngle = iconInitialAngle + iconRotation;
+  const iconFinalAngle = 0;
 
   return (
     <div
@@ -31,7 +33,7 @@ export default function ScoreMeter(props)
       style={{
         position: "relative",
         width: size,
-        height: size
+        height: size,
       }}>
       <svg
         className="score-meter-indicator"
@@ -45,6 +47,7 @@ export default function ScoreMeter(props)
           stroke={trackColor}
           strokeWidth={trackWidth}
           strokeDasharray={`${arc} ${dashArray}`}
+          strokeLinecap={indicatorCap}
           transform={`rotate(180 ${center} ${center})`} />
         <circle
           className="score-meter-indicator-fill"
@@ -56,6 +59,7 @@ export default function ScoreMeter(props)
           strokeWidth={indicatorWidth}
           strokeDasharray={dashArray * 1.4}
           strokeDashoffset={dashOffset}
+          strokeLinecap={indicatorCap}
           transform={`rotate(180 ${center} ${center})`} />
         <circle
           className="score-meter-indicator-fill"
@@ -67,6 +71,7 @@ export default function ScoreMeter(props)
           strokeWidth={indicatorWidth}
           strokeDasharray={dashArray * 1.3}
           strokeDashoffset={dashOffset}
+          strokeLinecap={indicatorCap}
           transform={`rotate(180 ${center} ${center})`} />
         <circle
           className="score-meter-indicator-fill"
@@ -78,6 +83,7 @@ export default function ScoreMeter(props)
           strokeWidth={indicatorWidth}
           strokeDasharray={dashArray * 1.2}
           strokeDashoffset={dashOffset}
+          strokeLinecap={indicatorCap}
           transform={`rotate(180 ${center} ${center})`} />
         <circle
           className="score-meter-indicator-fill"
@@ -89,6 +95,7 @@ export default function ScoreMeter(props)
           strokeWidth={indicatorWidth}
           strokeDasharray={dashArray * 1.1}
           strokeDashoffset={dashOffset}
+          strokeLinecap={indicatorCap}
           transform={`rotate(180 ${center} ${center})`} />
         <circle
           className="score-meter-indicator-fill"
@@ -100,6 +107,7 @@ export default function ScoreMeter(props)
           strokeWidth={indicatorWidth}
           strokeDasharray={dashArray}
           strokeDashoffset={dashOffset}
+          strokeLinecap={indicatorCap}
           transform={`rotate(180 ${center} ${center})`} />
       </svg>
       <div
