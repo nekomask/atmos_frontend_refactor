@@ -37,7 +37,7 @@ function ResultsPage(props)
 
                 </div>
                 <div className="results-activity-container">
-                    <Recs aqi={props.score}/>
+                    <Recs aqi={props.score} />
                 </div>
             </div>
             <div className='results-activities-container'>
