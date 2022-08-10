@@ -1,6 +1,9 @@
-@import url(accessories.css);
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+@import url("https://rsms.me/inter/inter.css");
+/* === COLOR VARS === */
+/* === FONT VARS === */
 html {
-  background-image: linear-gradient(to bottom, #EFF1F8, #EBEFFC);
+  background: linear-gradient(to bottom, #EFF1F8, #EBEFFC);
 }
 
 .logo-container {
@@ -44,7 +47,7 @@ html {
   color: white;
 }
 .landing-page .landing-location-container .landing-form-container input:focus {
-  outline: none !important;
+  outline: none;
 }
 .landing-page .landing-location-container .landing-form-container button {
   margin-top: 10px;

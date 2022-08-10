@@ -1,7 +1,7 @@
-@import url(accessories.css);
+@import './accessories.scss';
 
 html {
-    background-image: linear-gradient(to bottom,  #EFF1F8, #EBEFFC);
+    background: linear-gradient(to bottom,  #EFF1F8, #EBEFFC);
 }
 .logo-container {
     display: flex;
@@ -42,7 +42,7 @@ html {
                 padding: 5px;
                 color: white;
                 &:focus {
-                    outline: none !important;
+                    outline: none;
                 }
             }
             button {
