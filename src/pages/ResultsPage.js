@@ -25,7 +25,7 @@ function ResultsPage(props)
                 <div className="results-location-container">
                     <div className="results-location-icon-container">
                         {/* <img src="https://i.imgur.com/1gOHVQX.png" alt="results-location-icon" className="results-location-icon" /> */}
-                        <p id="city-state">{fixUppercase(props.city)}, {fixUppercase(props.USState)}</p>
+                        <h2 id="city-state">{fixUppercase(props.city)}, {fixUppercase(props.USState)}</h2>
                     </div>
                     <div className='results-score-container'>
                         {/* <p>Air Quality Score</p>

@@ -55,7 +55,11 @@ function App()
                 <Loading />
             ) : (
               <div>
-                <div className="logo-container">
+                <div className="logo-container" onClick={() => {
+                  setScore(-1);
+                  setCity("");
+                  setUSState("");
+                  }}>
                   <img src="https://i.imgur.com/UOFSsDV.png" alt="logo" className="logo-image" />
                 </div>
               {

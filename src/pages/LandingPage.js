@@ -53,7 +53,7 @@ function LandingPage(props) {
             onChange={handleChange}
           />
 
-          <button className="submit-button">Send</button>
+          <button className="submit-button">Submit</button>
         </form>
       </div>
     </div>
