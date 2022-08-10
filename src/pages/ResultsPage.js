@@ -28,8 +28,8 @@ function ResultsPage(props)
                         <p id="city-state">{fixUppercase(props.city)}, {fixUppercase(props.USState)}</p>
                     </div>
                     <div className='results-score-container'>
-                        <p>Air Quality Score</p>
-                        <h1 className="AQIScore">{props.score}</h1>
+                        {/* <p>Air Quality Score</p>
+                        <h1 className="AQIScore">{props.score}</h1> */}
                         <div className="results-score-meter-container">
                             <ScoreMeter score={props.score} />
                         </div>
@@ -38,6 +38,43 @@ function ResultsPage(props)
                 </div>
                 <div className="results-activity-container">
                     <Recs aqi={props.score}/>
+                    <div className='info-container'>
+
+                        <div className="RecsContainer">
+                            <div className='RecomsContainer'>
+                                <h3 className="RecTitle">How Can I Reduce Air Pollution?</h3>
+                                <p className='recoms'>
+                                Ozone:
+                                Turn off lights you are not using
+                                Drive less: carpool, use public transportation, bike or walk
+                                Keep your engine tuned, and don’t let your engine idle
+                                When refueling: stop when the pump shuts off, avoid spilling fuel, and tighten your gas cap
+                                Inflate tires to the recommended pressure
+                                Use low-VOC paint and cleaning products, and seal and store them so they can’t evaporate
+                                Watch for Air Quality Action Days in your area </p>
+                                <p className='recoms'>
+                                Air Particles:
+                                Drive less: carpool, use public transportation, bike or walk
+                                Choose ENERGY STAR appliances
+                                Set thermostats higher in summer and lower in winter
+                                Don’t burn leaves, garbage, plastic or rubber
+                                Keep car, boat and other engines tuned
+                                </p>
+                            </div>
+                            <div className='RecomsContainer'>
+                                <h3 className="RecTitle">Resources</h3>
+                                <p className='recoms'>
+                                    <ul className='list'>
+                                        <li><a href="https://www.airnow.gov/aqi/aqi-basics/">Air Quality Index (AQI) Basics</a></li>
+                                        <li><a href="https://www.airnow.gov/aqi/aqi-basics/using-air-quality-index/">Using the Air Quality Index</a></li>
+                                        <li><a href="https://www.airnow.gov/sites/default/files/2021-03/air-quality-guide_ozone_2015.pdf">Air Quality Guide for Ozone</a></li>
+                                        <li><a href="https://www.airnow.gov/sites/default/files/2021-03/air-quality-guide_pm_2015_0.pdf">Air Quality Guide for Particle Pollution</a></li>
+                                        <li><a href="http://www.aqmd.gov/home/air-quality/current-air-quality-data">Current Air Quality Data</a></li>
+                                    </ul>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div className='results-activities-container'>

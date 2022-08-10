@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { API_URL } from "./api/api_connection";
 import LandingPage from './pages/LandingPage';
 import ResultsPage from './pages/ResultsPage';
-import Loading from './components/Loading';
 
 import './App.css';
 
@@ -49,33 +48,24 @@ function App()
 
   return (
     <div className="App">
+      <div className="logo-container">
+        <img src="https://i.imgur.com/UOFSsDV.png" alt="logo-image" className="logo-image" />
+      </div>
       <main className="page-container">
-      <div className='article-container'>
-            { loading ? (
-                <Loading />
-            ) : (
-              <div>
-                <div className="logo-container">
-                  <img src="https://i.imgur.com/UOFSsDV.png" alt="logo" className="logo-image" />
-                </div>
-              {
-                score === -1 ?
-                  <LandingPage
-                    getData={getData}
-                    city={city}
-                    setCity={setCity}
-                    USState={USState}
-                    setUSState={setUSState} /> :
-                  <ResultsPage
-                    score={score}
-                    setScore={setScore}
-                    city={city}
-                    USState={USState} />
-              }
-              </div>
-            )}
-            </div>
-
+        {
+          score === -1 ?
+            <LandingPage
+              getData={getData}
+              city={city}
+              setCity={setCity}
+              USState={USState}
+              setUSState={setUSState} /> :
+            <ResultsPage
+              score={score}
+              setScore={setScore}
+              city={city}
+              USState={USState} />
+        }
       </main>
     </div>
   );
