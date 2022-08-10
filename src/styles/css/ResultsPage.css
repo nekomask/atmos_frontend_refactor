@@ -55,4 +55,8 @@ body {
   padding: 1.5vh;
 }
 
+.list > li {
+  list-style: none;
+}
+
 /*# sourceMappingURL=ResultsPage.css.map */
