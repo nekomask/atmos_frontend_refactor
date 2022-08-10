@@ -8,9 +8,9 @@ import './App.css';
 function App()
 {
   // CHANGE BACK BEFORE PUSH
-  const [city, setCity] = useState("Austin");
-  const [USState, setUSState] = useState("Texas");
-  const [score, setScore] = useState(130);
+  const [city, setCity] = useState("");
+  const [USState, setUSState] = useState("");
+  const [score, setScore] = useState(-1);
   const [loading, setLoading] = useState(false);
 
   /**
