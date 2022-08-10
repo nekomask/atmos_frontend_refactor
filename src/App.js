@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { API_URL } from "./api/api_connection";
 import LandingPage from './pages/LandingPage';
 import ResultsPage from './pages/ResultsPage';
@@ -47,19 +47,24 @@ function App()
 
   return (
     <div className="App">
-      {
-        score === -1 ?
-          <LandingPage
-            getData={getData}
-            city={city}
-            setCity={setCity}
-            USState={USState}
-            setUSState={setUSState} /> :
-          <ResultsPage
-            score={score}
-            setScore={setScore}
-            city={city} />
-      }
+      <div className="logo-container">
+        <img src="https://i.imgur.com/UOFSsDV.png" alt="logo-image" className="logo-image" />
+      </div>
+      <main className="page-container">
+        {
+          score === -1 ?
+            <LandingPage
+              getData={getData}
+              city={city}
+              setCity={setCity}
+              USState={USState}
+              setUSState={setUSState} /> :
+            <ResultsPage
+              score={score}
+              setScore={setScore}
+              city={city} />
+        }
+      </main>
     </div>
   );
 }

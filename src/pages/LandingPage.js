@@ -1,4 +1,4 @@
-import { React, useState } from 'react';
+import React from 'react';
 import '../styles/css/LandingPage.css';
 
 function LandingPage(props)
@@ -20,10 +20,7 @@ function LandingPage(props)
     }
 
     return (
-        <main className='landing-page'>
-            <div className="logo-container">
-                <img src="https://i.imgur.com/UOFSsDV.png" alt="logo-image" className="logo-image" />
-            </div>
+        <div className='landing-page'>
             <div className='landing-image-container'>
                 <img src="https://i.imgur.com/u4UyggO.png" alt="landing-image" className="landing-image" />
             </div>
@@ -56,7 +53,7 @@ function LandingPage(props)
                     <button className="submit-button">Send</button>
                 </form>
             </div>
-        </main >
+        </div >
     );
 }
 
