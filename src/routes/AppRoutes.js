@@ -12,8 +12,8 @@ import ResultsPage from '../pages/ResultsPage';
  function AppRoutes(props) {
     return (
         <Routes>
-            <Route exact path='/' element={<LandingPage />} /> 
-            <Route exact path='/results' element={<ResultsPage />} />
+            {/* <Route exact path='/' element={<LandingPage />} />  */}
+            <Route exact path='/' element={<ResultsPage />} />
         </Routes>
     );
 }
