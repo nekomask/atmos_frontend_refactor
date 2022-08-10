@@ -4,6 +4,10 @@ body {
     background-color: $background-color;
 }
 
+p {
+    font-family: $paragraph-font;
+}
+
 .results-page {
     display: flex;
     align-items: center;
@@ -56,4 +60,10 @@ body {
 
 .list > li {
     list-style: none;
+}
+
+#city-state {
+    margin-top: 20px;
+    font-family: $heading-font;
+    font-weight: $heading-font-weight;
 }
