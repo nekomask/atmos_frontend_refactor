@@ -2,65 +2,69 @@ import React, { useState, useEffect } from "react";
 
 export default function ScoreMeter(props)
 {
-  let { size = 150 } = props
+  let { size = 150 } = props;
 
   const [currColor, setCurrColor] = useState(null);
 
   useEffect(() =>
   {
-    switch (props.score)
+    if (props.score <= 50)
     {
-      case (props.score <= 50):
-        setCurrColor("radial-gradient(51.79% 51.79 % at 35.38% 45.13 %,rgba(149, 255, 132, 0) 26.04%,rgba(196, 241, 189, 0.545396) 66.38%, #95FF84 100%) ");
-        break;
-      case (props.score <= 100):
-        setCurrColor("radial-gradient(51.79% 51.79 % at 35.38% 45.13 %,rgba(149, 255, 132, 0) 26.04%,rgba(196, 241, 189, 0.545396) 66.38%, #95FF84 100%) ");
-        break;
-      case (props.score <= 150):
-        setCurrColor("radial-gradient(51.79% 51.79 % at 35.38% 45.13 %,rgba(149, 255, 132, 0) 26.04%,rgba(196, 241, 189, 0.545396) 66.38%, #95FF84 100%) ");
-        break;
-      case (props.score <= 200):
-        setCurrColor("radial-gradient(51.79% 51.79 % at 35.38% 45.13 %,rgba(149, 255, 132, 0) 26.04%,rgba(196, 241, 189, 0.545396) 66.38%, #95FF84 100%) ");
-        break;
-      case (props.score <= 300):
-        setCurrColor("radial-gradient(51.79% 51.79 % at 35.38% 45.13 %,rgba(149, 255, 132, 0) 26.04%,rgba(196, 241, 189, 0.545396) 66.38%, #95FF84 100%) ");
-        break;
-      case (props.score <= 500):
-        setCurrColor("radial-gradient(51.79% 51.79 % at 35.38% 45.13 %,rgba(149, 255, 132, 0) 26.04%,rgba(196, 241, 189, 0.545396) 66.38%, #95FF84 100%) ");
-        break;
-      default:
-        setCurrColor("radial-gradient(51.79% 51.79 % at 35.38% 45.13 %,rgba(149, 255, 132, 0) 26.04%,rgba(196, 241, 189, 0.545396) 66.38%, #95FF84 100%) ");
-        break;
+      setCurrColor("radial-gradient(51.79% 51.79% at 35.38% 45.13%, rgba(146, 255, 132, 0) 26.04%, rgba(196, 241, 189, 0.545396) 66.38%, #95FF84 100%)");
+    }
+    else if (props.score <= 100)
+    {
+      setCurrColor("radial-gradient(51.79% 51.79% at 35.38% 45.13%, rgba(146, 255, 132, 0) 26.04%, rgba(196, 241, 189, 0.545396) 66.38%, #95FF84 100%)");
+    }
+    else if (props.score <= 150)
+    {
+      setCurrColor("radial-gradient(51.79% 51.79% at 35.38% 45.13%, rgba(146, 255, 132, 0) 26.04%, rgba(196, 241, 189, 0.545396) 66.38%, #95FF84 100%)");
+    }
+    else if (props.score <= 200)
+    {
+      setCurrColor("radial-gradient(51.79% 51.79% at 35.38% 45.13%, rgba(146, 255, 132, 0) 26.04%, rgba(196, 241, 189, 0.545396) 66.38%, #95FF84 100%)");
+    }
+    else if (props.score <= 300)
+    {
+      setCurrColor("radial-gradient(51.79% 51.79% at 35.38% 45.13%, rgba(146, 255, 132, 0) 26.04%, rgba(196, 241, 189, 0.545396) 66.38%, #95FF84 100%)");
+    }
+    else if (props.score <= 500)
+    {
+      setCurrColor("radial-gradient(51.79% 51.79% at 35.38% 45.13%, rgba(146, 255, 132, 0) 26.04%, rgba(196, 241, 189, 0.545396) 66.38%, #95FF84 100%)");
     }
   }, []);
 
-  const outerCircleStyle =
+  console.log(currColor);
+
+  let outerCircleStyle =
   {
-    "height": size,
-    "width": size,
-    "border-radius": size,
-    "background": currColor,
+    "height": 150,
+    "width": 150,
+    borderRadius: 150,
+    "background": "radial-gradient(51.79% 51.79% at 35.38% 45.13%, rgba(146, 255, 132, 0) 26.04%, rgba(196, 241, 189, 0.545396) 66.38%, #95FF84 100%)",
     "display": "flex",
-    "justify-content": "center",
-    "align-items": "center"
+    justifyContent: "center",
+    alignItems: "center"
   }
 
-  const innerCircleStyle =
+  let innerCircleStyle =
   {
-    "height": size * 0.75,
-    "width": size * 0.75,
-    "background-color": "white",
-    "border-radius": size,
+    "height": 100,
+    "width": 100,
+    "background": "white",
+    borderRadius: 150,
     "display": "flex",
-    "justify-content": "center",
-    "align-items": "center"
+    justifyContent: "center",
+    alignItems: "center"
   }
+
+  console.log(outerCircleStyle);
+  console.log(innerCircleStyle)
 
   return (
     <div
       className="score-meter-container"
       style={{
-        position: "relative",
         width: size,
         height: size,
       }}>
@@ -69,8 +73,9 @@ export default function ScoreMeter(props)
         style={outerCircleStyle}>
         <div
           className="score-meter-circle-inner"
-          style={innerCircleStyle}>
-          {props.score}
+          style={innerCircleStyle}
+        >
+          <h1>{props.score}</h1>
         </div>
       </div>
       {/* <svg
