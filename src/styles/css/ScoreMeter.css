@@ -1,5 +1,7 @@
-@import './accessories.scss';
-
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+@import url("https://rsms.me/inter/inter.css");
+/* === COLOR VARS === */
+/* === FONT VARS === */
 .score-meter-container {
   margin: 1rem 0;
 }
@@ -13,7 +15,7 @@
 
 .score-meter-circle-outer p {
   gap: 1rem;
-  color: rgba(130, 130, 130, 1);
+  color: rgb(130, 130, 130);
   font-family: Inter;
   font-size: 12px;
   font-weight: 500;
@@ -23,3 +25,5 @@
 .score-meter-circle-inner {
   gap: 5px;
 }
+
+/*# sourceMappingURL=ScoreMeter.css.map */
