@@ -1,5 +1,4 @@
-import { getDefaultNormalizer } from '@testing-library/react';
-import { React, useState } from 'react';
+import React from 'react';
 import '../styles/css/LandingPage.css';
 
 function LandingPage(props)
@@ -21,20 +20,21 @@ function LandingPage(props)
     }
 
     return (
-        <main className='landing-page'>
-            <div className='image-container'>
-
+        <div className='landing-page'>
+            <div className='landing-image-container'>
+                <img src="https://i.imgur.com/u4UyggO.png" alt="landing-image" className="landing-image" />
             </div>
-            <div className='words-container'>
-                <form onSubmit={(e) => props.getData(e)}>
-                    <label htmlFor="form-input-state"></label>
-                    <input
-                        type="text"
-                        id="form-input-state"
-                        placeholder="state"
-                        value={props.USState}
-                        onChange={handleChange} />
-                    <label htmlFor="form-input-city"></label>
+            <div className='landing-summary-container'>
+                <p className="landing-summary-text">
+                    ATMOS is a local Air Quality Index app that encourages people to educate themselves on Air Quality, and what they can do to live a greener lifestyle by reducing air pollutants through sustainable living.
+                </p>
+            </div>
+            <div className='landing-location-container'>
+                Get started here:
+                <form
+                    className="landing-form-container"
+                    onSubmit={props.getData}>
+                    <label htmlFor="form-input-city" />
                     <input
                         type="text"
                         name="city"
@@ -42,13 +42,18 @@ function LandingPage(props)
                         placeholder="city"
                         value={props.city}
                         onChange={handleChange} />
+                    <label htmlFor="form-input-state" />
+                    <input
+                        type="text"
+                        id="form-input-state"
+                        placeholder="state"
+                        value={props.USState}
+                        onChange={handleChange} />
+
                     <button className="submit-button">Send</button>
                 </form>
             </div>
-            <div className='location-container'>
-
-            </div>
-        </main>
+        </div >
     );
 }
 

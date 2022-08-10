@@ -1,50 +1,45 @@
-import './CircleProgressBar.css';
+import React from "react";
 
-export default function CircleProgressBar(props)
+export default function ScoreMeter(props)
 {
   let {
     size = 150,
-    progress = 0,
+    score = 0,
     trackWidth = 10,
     trackColor = "#D9D9D9",
     indicatorWidth = 10,
-    indicatorCap = "",
-    label = `${progress}%`,
+    indicatorCap = ""
   } = props
 
+  // Defines the meter
   const center = size / 2;
-  // const radius = center - (trackWidth > indicatorWidth ? trackWidth : indicatorWidth);
   const radius = center - trackWidth;
   const dashArray = 2 * Math.PI * radius;
-  const arc = dashArray * 0.75;
-  // const dashOffset = dashArray * ((100 - progress) / 100);
+  const arc = dashArray * 0.5;
   const dashOffset = dashArray - 0.2 * arc;
 
-  const sections =
-    [
-      {
-        offset: dashArray * ((100 - progress) / 100),
-        color: "blue"
-      },
-      {
-        offset: dashArray * ((100 - progress) / 100),
-        color: "green"
-      },
-      {
-        offset: dashArray * ((100 - progress) / 100),
-        color: "red"
-      },
-    ];
+  // Defines the icon
+  const iconTopPosition = size / 2 - 20;
+  const iconLeftPosition = size / 4 + 5;
+  const maxScore = 1000;
+  const iconInitialAngle = -30;
+  const iconRotation = maxScore / arc * 0 / 4;
+  // const iconFinalAngle = iconInitialAngle + iconRotation;
+  const iconFinalAngle = 0;
 
   return (
     <div
-      className="circle-progress-bar-container"
-      style={{ width: size, height: size }}>
+      className="score-meter-container"
+      style={{
+        position: "relative",
+        width: size,
+        height: size,
+      }}>
       <svg
-        className="circle-progress-bar-indicator"
+        className="score-meter-indicator"
         style={{ width: size, height: size }}>
         <circle
-          className="circle-progress-bar-indicator-track"
+          className="score-meter-indicator-track"
           cx={center}
           cy={center}
           fill="transparent"
@@ -52,57 +47,58 @@ export default function CircleProgressBar(props)
           stroke={trackColor}
           strokeWidth={trackWidth}
           strokeDasharray={`${arc} ${dashArray}`}
-          transform={`rotate(135 ${center} ${center})`} />
+          strokeLinecap={indicatorCap}
+          transform={`rotate(180 ${center} ${center})`} />
         <circle
-          className="circle-progress-bar-indicator-fill"
+          className="score-meter-indicator-fill"
           cx={center}
           cy={center}
           fill="transparent"
           r={radius}
           stroke={"maroon"}
           strokeWidth={indicatorWidth}
-          strokeDasharray={dashArray * 1.6}
+          strokeDasharray={dashArray * 1.4}
           strokeDashoffset={dashOffset}
           strokeLinecap={indicatorCap}
-          transform={`rotate(135 ${center} ${center})`} />
+          transform={`rotate(180 ${center} ${center})`} />
         <circle
-          className="circle-progress-bar-indicator-fill"
+          className="score-meter-indicator-fill"
           cx={center}
           cy={center}
           fill="transparent"
           r={radius}
           stroke={"red"}
           strokeWidth={indicatorWidth}
-          strokeDasharray={dashArray * 1.45}
+          strokeDasharray={dashArray * 1.3}
           strokeDashoffset={dashOffset}
           strokeLinecap={indicatorCap}
-          transform={`rotate(135 ${center} ${center})`} />
+          transform={`rotate(180 ${center} ${center})`} />
         <circle
-          className="circle-progress-bar-indicator-fill"
+          className="score-meter-indicator-fill"
           cx={center}
           cy={center}
           fill="transparent"
           r={radius}
           stroke={"orange"}
           strokeWidth={indicatorWidth}
-          strokeDasharray={dashArray * 1.3}
+          strokeDasharray={dashArray * 1.2}
           strokeDashoffset={dashOffset}
           strokeLinecap={indicatorCap}
-          transform={`rotate(135 ${center} ${center})`} />
+          transform={`rotate(180 ${center} ${center})`} />
         <circle
-          className="circle-progress-bar-indicator-fill"
+          className="score-meter-indicator-fill"
           cx={center}
           cy={center}
           fill="transparent"
           r={radius}
           stroke={"yellow"}
           strokeWidth={indicatorWidth}
-          strokeDasharray={dashArray * 1.15}
+          strokeDasharray={dashArray * 1.1}
           strokeDashoffset={dashOffset}
           strokeLinecap={indicatorCap}
-          transform={`rotate(135 ${center} ${center})`} />
+          transform={`rotate(180 ${center} ${center})`} />
         <circle
-          className="circle-progress-bar-indicator-fill"
+          className="score-meter-indicator-fill"
           cx={center}
           cy={center}
           fill="transparent"
@@ -112,9 +108,22 @@ export default function CircleProgressBar(props)
           strokeDasharray={dashArray}
           strokeDashoffset={dashOffset}
           strokeLinecap={indicatorCap}
-          transform={`rotate(135 ${center} ${center})`} />
+          transform={`rotate(180 ${center} ${center})`} />
       </svg>
-      <div className="circle-progress-bar-label">{label}</div>
+      <div
+        className="score-meter-arrow-icon-container"
+        style={{
+          position: "absolute",
+          top: `${iconTopPosition}px`,
+          left: `${iconLeftPosition}px`
+        }}>
+        <img
+          src="https://i.imgur.com/WcL0eiw.png" alt="score-meter-arrow-icon" className="score-meter-arrow-icon"
+          style={{
+            transformOrigin: "70% 70%",
+            transform: `rotate(${iconFinalAngle}deg)`,
+          }} />
+      </div>
     </div>
   );
 }
