@@ -1,10 +1,24 @@
+import { getDefaultNormalizer } from '@testing-library/react';
 import { React, useState } from 'react';
-import { API_URL } from "../api/api_connection";
-
 import '../styles/css/LandingPage.css';
 
-function LandingPage(props) {
-
+function LandingPage(props)
+{
+    /**
+     * Sets search query to value of search input on page.
+     * @param {Object} e Event Object.
+     */
+    const handleChange = (e) =>
+    {
+        if (e.target.name === "city")
+        {
+            props.setCity(e.target.value);
+        }
+        else
+        {
+            props.setUSState(e.target.value);
+        }
+    }
 
     return (
         <main className='landing-page'>
@@ -12,7 +26,24 @@ function LandingPage(props) {
 
             </div>
             <div className='words-container'>
-
+                <form onSubmit={(e) => props.getData(e)}>
+                    <label htmlFor="form-input-state"></label>
+                    <input
+                        type="text"
+                        id="form-input-state"
+                        placeholder="state"
+                        value={props.USState}
+                        onChange={handleChange} />
+                    <label htmlFor="form-input-city"></label>
+                    <input
+                        type="text"
+                        name="city"
+                        id="form-input-city"
+                        placeholder="city"
+                        value={props.city}
+                        onChange={handleChange} />
+                    <button className="submit-button">Send</button>
+                </form>
             </div>
             <div className='location-container'>
 

@@ -1,49 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { API_URL } from "../api/api_connection";
+import React, { useEffect } from 'react';
 
 import '../styles/css/ResultsPage.css';
 
-function ResultsPage(props) {
-    const [city, setCity] = useState("");
-    const [USstate, setUSState] = useState("");
-    const [score, setScore] = useState(0);
-    const [loading, setLoading] = useState(false);
-
-    useEffect(() => {
-        /**
-         * ADD
-         * @returns ADD
-         */
-        const getData = async function () {
-            try {
-                setLoading(true);
-                let response = await fetch(API_URL, {
-                    method: 'POST',
-                    body: JSON.stringify({
-                        city: "Austin",
-                        state: "Texas"
-                    }),
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
-                });
-                console.log("RESPONSE:", response);
-                let data = await response.json();
-                console.log("DATA:", data);
-                
-                setScore(data.air_quality);
-                setCity(data.city);
-                setUSState(data.state);
-
-                setLoading(false);
-            } catch(error) {
-                console.error(error);
-            }
-        }
-
-        getData();
-    }, []);
-
+function ResultsPage(props)
+{
     return (
         <main className='results-page'>
             <div className='location-container'>
@@ -51,7 +11,7 @@ function ResultsPage(props) {
             </div>
             <div className='score-container'>
                 <p>Air Quality Score</p>
-                    <h1 className="AQIScore">{score}, {city}, {USstate}</h1>
+                <h1 className="AQIScore">{props.score}, {props.city}</h1>
             </div>
             <div className='recommendations-container'>
 
