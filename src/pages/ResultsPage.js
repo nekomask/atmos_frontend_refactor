@@ -37,28 +37,28 @@ function ResultsPage(props)
 
                 </div>
                 <div className="results-activity-container">
-                    <Recs aqi={props.score}/>
+                    <Recs aqi={props.score} />
                     <div className='info-container'>
 
                         <div className="RecsContainer">
                             <div className='RecomsContainer'>
                                 <h3 className="RecTitle">How Can I Reduce Air Pollution?</h3>
                                 <p className='recoms'>
-                                Ozone:
-                                Turn off lights you are not using
-                                Drive less: carpool, use public transportation, bike or walk
-                                Keep your engine tuned, and don’t let your engine idle
-                                When refueling: stop when the pump shuts off, avoid spilling fuel, and tighten your gas cap
-                                Inflate tires to the recommended pressure
-                                Use low-VOC paint and cleaning products, and seal and store them so they can’t evaporate
-                                Watch for Air Quality Action Days in your area </p>
+                                    Ozone:
+                                    Turn off lights you are not using
+                                    Drive less: carpool, use public transportation, bike or walk
+                                    Keep your engine tuned, and don’t let your engine idle
+                                    When refueling: stop when the pump shuts off, avoid spilling fuel, and tighten your gas cap
+                                    Inflate tires to the recommended pressure
+                                    Use low-VOC paint and cleaning products, and seal and store them so they can’t evaporate
+                                    Watch for Air Quality Action Days in your area </p>
                                 <p className='recoms'>
-                                Air Particles:
-                                Drive less: carpool, use public transportation, bike or walk
-                                Choose ENERGY STAR appliances
-                                Set thermostats higher in summer and lower in winter
-                                Don’t burn leaves, garbage, plastic or rubber
-                                Keep car, boat and other engines tuned
+                                    Air Particles:
+                                    Drive less: carpool, use public transportation, bike or walk
+                                    Choose ENERGY STAR appliances
+                                    Set thermostats higher in summer and lower in winter
+                                    Don’t burn leaves, garbage, plastic or rubber
+                                    Keep car, boat and other engines tuned
                                 </p>
                             </div>
                             <div className='RecomsContainer'>
@@ -75,12 +75,12 @@ function ResultsPage(props)
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                </div >
+            </div >
             <div className='results-activities-container'>
 
             </div>
-        </div>
+        </div >
     );
 }
 

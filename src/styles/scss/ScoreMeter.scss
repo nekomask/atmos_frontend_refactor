@@ -1,0 +1,25 @@
+@import './accessories.scss';
+
+.score-meter-container {
+  margin: 1rem 0;
+}
+
+.score-meter-circle-outer {
+  font-family: Inter;
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 58px;
+}
+
+.score-meter-circle-outer p {
+  gap: 1rem;
+  color: rgba(130, 130, 130, 1);
+  font-family: Inter;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+}
+
+.score-meter-circle-inner {
+  gap: 5px;
+}

@@ -1,128 +1,88 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import "../styles/css/ScoreMeter.css";
 
 export default function ScoreMeter(props)
 {
-  let {
-    size = 150,
-    score = 0,
-    trackWidth = 10,
-    trackColor = "#D9D9D9",
-    indicatorWidth = 10,
-    indicatorCap = ""
-  } = props
+  let { size = 200 } = props;
 
-  // Defines the meter
-  const center = size / 2;
-  const radius = center - trackWidth;
-  const dashArray = 2 * Math.PI * radius;
-  const arc = dashArray * 0.5;
-  const dashOffset = dashArray - 0.2 * arc;
+  const [currColor, setCurrColor] = useState(null);
+  const [currGradient, setCurrGradient] = useState(null);
 
-  // Defines the icon
-  const iconTopPosition = size / 2 - 20;
-  const iconLeftPosition = size / 4 + 5;
-  const maxScore = 1000;
-  const iconInitialAngle = -30;
-  const iconRotation = maxScore / arc * 0 / 4;
-  // const iconFinalAngle = iconInitialAngle + iconRotation;
-  const iconFinalAngle = 0;
+  useEffect(() =>
+  {
+    if (props.score <= 50)
+    {
+      setCurrColor("rgba(81, 184, 65, 1)");
+      setCurrGradient("radial-gradient(51.79% 51.79% at 35.38% 45.13%, rgba(146, 255, 132, 0) 26.04%, rgba(196, 241, 189, 0.545396) 66.38%, #95FF84 100%)");
+    }
+    else if (props.score <= 100)
+    {
+      setCurrColor("rgba(254, 205, 31, 1)");
+      setCurrGradient("radial-gradient(51.79% 51.79% at 35.38% 45.13%, rgba(254, 205, 31, 0) 26.04%, rgba(254, 205, 31, 0.55) 66.38%, #FECD1F 100%)");
+    }
+    else if (props.score <= 150)
+    {
+      setCurrColor("rgba(255, 154, 0, 1)");
+      setCurrGradient("radial-gradient(51.79% 51.79% at 35.38% 45.13%, rgba(255, 154, 0, 0) 26.04%, rgba(255, 154, 0, 0.55) 66.38%, #FF9A00 100%)");
+    }
+    else if (props.score <= 200)
+    {
+      setCurrColor("rgba(237, 66, 29, 1)");
+      setCurrGradient("radial-gradient(51.79% 51.79% at 35.38% 45.13%, rgba(237, 66, 29, 0) 26.04%, rgba(237, 66, 29, 0.55) 66.38%, #ED421D 100%)");
+    }
+    else if (props.score <= 300)
+    {
+      setCurrColor("rgba(119, 52, 206, 1)");
+      setCurrGradient("background: radial-gradient(51.79% 51.79% at 35.38% 45.13%, rgba(135, 69, 220, 0) 26.04%, rgba(135, 69, 220, 0.5) 66.38%, #8745DC 100%)");
+    }
+    else if (props.score <= 500)
+    {
+      setCurrColor("rgba(100, 27, 135, 1)");
+      setCurrGradient("radial-gradient(51.79% 51.79% at 35.38% 45.13%, rgba(100, 27, 135, 0) 27.75%, rgba(100, 27, 135, 0.55) 57.15%, #641B87 78.7%)");
+    }
+  }, []);
+
+  let outerCircleStyle =
+  {
+    "height": size,
+    "width": size,
+    "border-radius": size,
+    "background": currGradient,
+    "display": "flex",
+    "justify-content": "center",
+    "align-items": "center"
+  }
+
+  let innerCircleStyle =
+  {
+    "height": size * 0.75,
+    "width": size * 0.75,
+    "background": "white",
+    "color": currColor,
+    "border-radius": size,
+    "display": "flex",
+    "flex-direction": "column",
+    "justify-content": "center",
+    "align-items": "center"
+  }
 
   return (
     <div
       className="score-meter-container"
       style={{
-        position: "relative",
         width: size,
         height: size,
       }}>
-      <svg
-        className="score-meter-indicator"
-        style={{ width: size, height: size }}>
-        <circle
-          className="score-meter-indicator-track"
-          cx={center}
-          cy={center}
-          fill="transparent"
-          r={radius}
-          stroke={trackColor}
-          strokeWidth={trackWidth}
-          strokeDasharray={`${arc} ${dashArray}`}
-          strokeLinecap={indicatorCap}
-          transform={`rotate(180 ${center} ${center})`} />
-        <circle
-          className="score-meter-indicator-fill"
-          cx={center}
-          cy={center}
-          fill="transparent"
-          r={radius}
-          stroke={"maroon"}
-          strokeWidth={indicatorWidth}
-          strokeDasharray={dashArray * 1.4}
-          strokeDashoffset={dashOffset}
-          strokeLinecap={indicatorCap}
-          transform={`rotate(180 ${center} ${center})`} />
-        <circle
-          className="score-meter-indicator-fill"
-          cx={center}
-          cy={center}
-          fill="transparent"
-          r={radius}
-          stroke={"red"}
-          strokeWidth={indicatorWidth}
-          strokeDasharray={dashArray * 1.3}
-          strokeDashoffset={dashOffset}
-          strokeLinecap={indicatorCap}
-          transform={`rotate(180 ${center} ${center})`} />
-        <circle
-          className="score-meter-indicator-fill"
-          cx={center}
-          cy={center}
-          fill="transparent"
-          r={radius}
-          stroke={"orange"}
-          strokeWidth={indicatorWidth}
-          strokeDasharray={dashArray * 1.2}
-          strokeDashoffset={dashOffset}
-          strokeLinecap={indicatorCap}
-          transform={`rotate(180 ${center} ${center})`} />
-        <circle
-          className="score-meter-indicator-fill"
-          cx={center}
-          cy={center}
-          fill="transparent"
-          r={radius}
-          stroke={"yellow"}
-          strokeWidth={indicatorWidth}
-          strokeDasharray={dashArray * 1.1}
-          strokeDashoffset={dashOffset}
-          strokeLinecap={indicatorCap}
-          transform={`rotate(180 ${center} ${center})`} />
-        <circle
-          className="score-meter-indicator-fill"
-          cx={center}
-          cy={center}
-          fill="transparent"
-          r={radius}
-          stroke={"green"}
-          strokeWidth={indicatorWidth}
-          strokeDasharray={dashArray}
-          strokeDashoffset={dashOffset}
-          strokeLinecap={indicatorCap}
-          transform={`rotate(180 ${center} ${center})`} />
-      </svg>
       <div
-        className="score-meter-arrow-icon-container"
-        style={{
-          position: "absolute",
-          top: `${iconTopPosition}px`,
-          left: `${iconLeftPosition}px`
-        }}>
-        <img
-          src="https://i.imgur.com/WcL0eiw.png" alt="score-meter-arrow-icon" className="score-meter-arrow-icon"
-          style={{
-            transformOrigin: "70% 70%",
-            transform: `rotate(${iconFinalAngle}deg)`,
-          }} />
+        className="score-meter-circle-outer"
+        style={outerCircleStyle}>
+        <div
+          className="score-meter-circle-inner"
+          style={innerCircleStyle}
+        >
+          {props.score}
+          <p>Air Quality Score</p>
+        </div>
       </div>
     </div>
   );
