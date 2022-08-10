@@ -1,31 +1,60 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 export default function ScoreMeter(props)
 {
-  let {
-    size = 150,
-    score = 0,
-    trackWidth = 10,
-    trackColor = "#D9D9D9",
-    indicatorWidth = 10,
-    indicatorCap = ""
-  } = props
+  let { size = 150 } = props
 
-  // Defines the meter
-  const center = size / 2;
-  const radius = center - trackWidth;
-  const dashArray = 2 * Math.PI * radius;
-  const arc = dashArray * 0.5;
-  const dashOffset = dashArray - 0.2 * arc;
+  const [currColor, setCurrColor] = useState(null);
 
-  // Defines the icon
-  const iconTopPosition = size / 2 - 20;
-  const iconLeftPosition = size / 4 + 5;
-  const maxScore = 1000;
-  const iconInitialAngle = -30;
-  const iconRotation = maxScore / arc * 0 / 4;
-  // const iconFinalAngle = iconInitialAngle + iconRotation;
-  const iconFinalAngle = 0;
+  useEffect(() =>
+  {
+    switch (props.score)
+    {
+      case (props.score <= 50):
+        setCurrColor("radial-gradient(51.79% 51.79 % at 35.38% 45.13 %,rgba(149, 255, 132, 0) 26.04%,rgba(196, 241, 189, 0.545396) 66.38%, #95FF84 100%) ");
+        break;
+      case (props.score <= 100):
+        setCurrColor("radial-gradient(51.79% 51.79 % at 35.38% 45.13 %,rgba(149, 255, 132, 0) 26.04%,rgba(196, 241, 189, 0.545396) 66.38%, #95FF84 100%) ");
+        break;
+      case (props.score <= 150):
+        setCurrColor("radial-gradient(51.79% 51.79 % at 35.38% 45.13 %,rgba(149, 255, 132, 0) 26.04%,rgba(196, 241, 189, 0.545396) 66.38%, #95FF84 100%) ");
+        break;
+      case (props.score <= 200):
+        setCurrColor("radial-gradient(51.79% 51.79 % at 35.38% 45.13 %,rgba(149, 255, 132, 0) 26.04%,rgba(196, 241, 189, 0.545396) 66.38%, #95FF84 100%) ");
+        break;
+      case (props.score <= 300):
+        setCurrColor("radial-gradient(51.79% 51.79 % at 35.38% 45.13 %,rgba(149, 255, 132, 0) 26.04%,rgba(196, 241, 189, 0.545396) 66.38%, #95FF84 100%) ");
+        break;
+      case (props.score <= 500):
+        setCurrColor("radial-gradient(51.79% 51.79 % at 35.38% 45.13 %,rgba(149, 255, 132, 0) 26.04%,rgba(196, 241, 189, 0.545396) 66.38%, #95FF84 100%) ");
+        break;
+      default:
+        setCurrColor("radial-gradient(51.79% 51.79 % at 35.38% 45.13 %,rgba(149, 255, 132, 0) 26.04%,rgba(196, 241, 189, 0.545396) 66.38%, #95FF84 100%) ");
+        break;
+    }
+  }, []);
+
+  const outerCircleStyle =
+  {
+    "height": size,
+    "width": size,
+    "border-radius": size,
+    "background": currColor,
+    "display": "flex",
+    "justify-content": "center",
+    "align-items": "center"
+  }
+
+  const innerCircleStyle =
+  {
+    "height": size * 0.75,
+    "width": size * 0.75,
+    "background-color": "white",
+    "border-radius": size,
+    "display": "flex",
+    "justify-content": "center",
+    "align-items": "center"
+  }
 
   return (
     <div
@@ -35,82 +64,50 @@ export default function ScoreMeter(props)
         width: size,
         height: size,
       }}>
-      <svg
+      <div
+        className="score-meter-circle-outer"
+        style={outerCircleStyle}>
+        <div
+          className="score-meter-circle-inner"
+          style={innerCircleStyle}>
+          {props.score}
+        </div>
+      </div>
+      {/* <svg
         className="score-meter-indicator"
         style={{ width: size, height: size }}>
+        <radialGradient id="linear-colors" cx="0.5" cy="0.5" r="0.4" fx="0.75" fy="0.75">
+          <stop offset="0%" stop-color="rgb(0, 228, 0, 0.2)" />
+          <stop offset="100%" stop-color="rgb(0, 228, 0, .1)" />
+          
+          background: radial-gradient(
+            51.79% 51.79% at 35.38% 45.13%, 
+            rgba(149, 255, 132, 0) 26.04%, 
+            rgba(196, 241, 189, 0.545396) 66.38%, 
+            #95FF84 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected
+
+
+        </radialGradient>
         <circle
-          className="score-meter-indicator-track"
+          className="score-meter-circle-outer"
           cx={center}
           cy={center}
-          fill="transparent"
+          fill="url(#linear-colors)"
           r={radius}
-          stroke={trackColor}
+          stroke={""}
           strokeWidth={trackWidth}
-          strokeDasharray={`${arc} ${dashArray}`}
-          strokeLinecap={indicatorCap}
           transform={`rotate(180 ${center} ${center})`} />
         <circle
-          className="score-meter-indicator-fill"
+          className="score-meter-circle-inner"
           cx={center}
           cy={center}
-          fill="transparent"
-          r={radius}
-          stroke={"maroon"}
+          fill="white"
+          r={radius * 0.75}
+          stroke={""}
           strokeWidth={indicatorWidth}
-          strokeDasharray={dashArray * 1.4}
-          strokeDashoffset={dashOffset}
-          strokeLinecap={indicatorCap}
-          transform={`rotate(180 ${center} ${center})`} />
-        <circle
-          className="score-meter-indicator-fill"
-          cx={center}
-          cy={center}
-          fill="transparent"
-          r={radius}
-          stroke={"red"}
-          strokeWidth={indicatorWidth}
-          strokeDasharray={dashArray * 1.3}
-          strokeDashoffset={dashOffset}
-          strokeLinecap={indicatorCap}
-          transform={`rotate(180 ${center} ${center})`} />
-        <circle
-          className="score-meter-indicator-fill"
-          cx={center}
-          cy={center}
-          fill="transparent"
-          r={radius}
-          stroke={"orange"}
-          strokeWidth={indicatorWidth}
-          strokeDasharray={dashArray * 1.2}
-          strokeDashoffset={dashOffset}
-          strokeLinecap={indicatorCap}
-          transform={`rotate(180 ${center} ${center})`} />
-        <circle
-          className="score-meter-indicator-fill"
-          cx={center}
-          cy={center}
-          fill="transparent"
-          r={radius}
-          stroke={"yellow"}
-          strokeWidth={indicatorWidth}
-          strokeDasharray={dashArray * 1.1}
-          strokeDashoffset={dashOffset}
-          strokeLinecap={indicatorCap}
-          transform={`rotate(180 ${center} ${center})`} />
-        <circle
-          className="score-meter-indicator-fill"
-          cx={center}
-          cy={center}
-          fill="transparent"
-          r={radius}
-          stroke={"green"}
-          strokeWidth={indicatorWidth}
-          strokeDasharray={dashArray}
-          strokeDashoffset={dashOffset}
-          strokeLinecap={indicatorCap}
-          transform={`rotate(180 ${center} ${center})`} />
-      </svg>
-      <div
+          transform={`rotate(0 ${center} ${center})`} />
+      </svg> */}
+      {/* <div
         className="score-meter-arrow-icon-container"
         style={{
           position: "absolute",
@@ -123,7 +120,7 @@ export default function ScoreMeter(props)
             transformOrigin: "70% 70%",
             transform: `rotate(${iconFinalAngle}deg)`,
           }} />
-      </div>
+      </div> */}
     </div>
   );
 }
