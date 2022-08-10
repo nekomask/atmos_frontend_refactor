@@ -29,7 +29,7 @@ function LandingPage(props)
                     ATMOS is a local Air Quality Index app that encourages people to educate themselves on Air Quality, and what they can do to live a greener lifestyle by reducing air pollutants through sustainable living.
                 </p>
             </div>
-            <div className='location-container'>
+            <div className='landing-location-container'>
                 Get started here:
                 <form
                     className="landing-form-container"
