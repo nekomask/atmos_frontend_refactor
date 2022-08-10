@@ -1,7 +1,7 @@
 @import './accessories.scss';
 
 html {
-    background: linear-gradient(to bottom,  #EFF1F8, #EBEFFC);
+    background: $background-color;
 }
 .logo-container {
     display: flex;
@@ -23,6 +23,7 @@ html {
         align-items: center;
         width: 350px;
         text-align: center;
+        font-family: $paragraph-font;
 
     }
     .landing-location-container {
@@ -35,7 +36,7 @@ html {
             gap: 5px;
             align-items: center;
             input {
-                background-color: #4568AD;
+                background-color: $input-color;
                 border-width: 0 0 2px;
                 border-color: white;
                 border-radius: 10px;
@@ -44,19 +45,24 @@ html {
                 &:focus {
                     outline: none;
                 }
+                &::placeholder {
+                    color: rgb(179, 179, 179);
+                }
             }
             button {
                 margin-top: 10px;
-                font-style: bold;
+                font-family: $heading-font;
                 width: 50px;
                 background-color: rgba(0,0,0,0);
                 border-radius: 10px;
                 border: 0px solid #9cadd0;
                 padding: 2px;
                 color: black;
+                top:0;
+                position: relative;
+                transition: top ease 0.3s;
                 &:hover {
-                    background-color: #7990be;
-                    border: 2px solid #7990be
+                    top: -8px;
                 }
             }
         }
