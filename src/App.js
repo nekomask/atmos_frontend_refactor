@@ -62,7 +62,8 @@ function App()
             <ResultsPage
               score={score}
               setScore={setScore}
-              city={city} />
+              city={city}
+              USState={USState} />
         }
       </main>
     </div>
