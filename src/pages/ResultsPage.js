@@ -75,7 +75,6 @@ function ResultsPage(props)
                             </div>
                         </div>
                     </div>
->>>>>>> dev
                 </div >
             </div >
             <div className='results-activities-container'>
