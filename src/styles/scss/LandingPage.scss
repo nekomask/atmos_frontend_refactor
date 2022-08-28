@@ -61,13 +61,15 @@ html {
                 background-color: rgba(0,0,0,0);
                 border-radius: 10px;
                 border: 0px solid #9cadd0;
-                padding: 2px;
+                padding: 5px;
                 color: black;
                 top:0;
+                cursor: pointer;
                 position: relative;
                 transition: top ease 0.3s;
                 &:hover {
-                    top: -4px;
+                    top: -3px;
+                    opacity: 70%;
                 }
             }
         }
