@@ -65,7 +65,7 @@ function ResultsPage(props)
                             <div className='RecomsContainer'>
                                 <h3 className="RecTitle">Resources</h3>
                                 <div className='recoms'>
-                                    <ul className='list'>
+                                    <ul className='list' id="list-special">
                                         <li><a href="https://www.airnow.gov/aqi/aqi-basics/">Air Quality Index (AQI) Basics</a></li>
                                         <li><a href="https://www.airnow.gov/aqi/aqi-basics/using-air-quality-index/">Using the Air Quality Index</a></li>
                                         <li><a href="https://www.airnow.gov/sites/default/files/2021-03/air-quality-guide_ozone_2015.pdf">Air Quality Guide for Ozone</a></li>

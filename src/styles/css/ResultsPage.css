@@ -44,10 +44,13 @@ p {
   border: 1px solid linear-gradient(to bottom, #EFF1F8, #EBEFFC);
   border-radius: 1.5vh;
   margin: 2vh;
+  width: 330px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+}
+.RecsContainer .RecomsContainer h3 {
+  align-self: center;
 }
 .RecsContainer .RecomsContainer .RecTitle {
   margin-top: 3vh;
@@ -57,20 +60,50 @@ p {
 }
 .RecsContainer .RecomsContainer .recoms {
   padding: 1.5vh;
+  display: flex;
+  width: 310px;
+  flex-direction: column;
+  justify-self: left;
+  align-items: left;
 }
 .RecsContainer .RecomsContainer .recoms .list > li {
   list-style: circle;
   margin-left: 20px;
 }
-
-.list > li {
+.RecsContainer .RecomsContainer .recoms #list-special > li {
   list-style: none;
+  margin-left: 0;
 }
 
 #city-state {
   margin-top: 20px;
   font-family: "Fredoka One", cursive;
   font-weight: 100;
+}
+
+@media only screen and (min-width: 400px) {
+  .RecsContainer .RecomsContainer {
+    width: 380px;
+  }
+  .RecsContainer .RecomsContainer .recoms {
+    width: 350px;
+  }
+}
+@media only screen and (min-width: 500px) {
+  .RecsContainer .RecomsContainer {
+    width: 480px;
+  }
+  .RecsContainer .RecomsContainer .recoms {
+    width: 450px;
+  }
+}
+@media only screen and (min-width: 700px) {
+  .RecsContainer .RecomsContainer {
+    width: 600px;
+  }
+  .RecsContainer .RecomsContainer .recoms {
+    width: 580px;
+  }
 }
 
 /*# sourceMappingURL=ResultsPage.css.map */

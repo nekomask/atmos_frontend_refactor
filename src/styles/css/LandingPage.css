@@ -28,6 +28,9 @@ html {
   text-align: center;
   font-family: "Inter", sans-serif;
 }
+.landing-page .landing-summary-container .landing-summary-text {
+  margin-top: 10px;
+}
 .landing-page .landing-location-container {
   display: flex;
   flex-direction: column;
@@ -48,7 +51,7 @@ html {
   border-width: 0 0 2px;
   border-color: white;
   border-radius: 10px;
-  padding: 5px;
+  padding: 10px;
   color: white;
 }
 .landing-page .landing-location-container .landing-form-container input:focus {
@@ -85,6 +88,16 @@ html {
 }
 .error-box .error-item {
   color: #D61A3C;
+}
+
+@media only screen and (min-width: 500px) {
+  .error-box {
+    width: 450px;
+  }
+
+  .landing-page .landing-summary-container {
+    width: 450px;
+  }
 }
 
 /*# sourceMappingURL=LandingPage.css.map */
