@@ -54,6 +54,10 @@ p {
         }
         .recoms {
             padding: 1.5vh;
+            .list > li {
+                list-style: circle;
+                margin-left: 20px;
+            }
         }
     }
 }

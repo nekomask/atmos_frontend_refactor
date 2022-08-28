@@ -58,6 +58,10 @@ p {
 .RecsContainer .RecomsContainer .recoms {
   padding: 1.5vh;
 }
+.RecsContainer .RecomsContainer .recoms .list > li {
+  list-style: circle;
+  margin-left: 20px;
+}
 
 .list > li {
   list-style: none;

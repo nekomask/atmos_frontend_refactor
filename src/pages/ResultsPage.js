@@ -39,27 +39,32 @@ function ResultsPage(props)
                         <div className="RecsContainer">
                             <div className='RecomsContainer'>
                                 <h3 className="RecTitle">How Can I Reduce Air Pollution?</h3>
-                                <p className='recoms'>
+                                <div className='recoms'>
                                     Ozone:
-                                    Turn off lights you are not using
-                                    Drive less: carpool, use public transportation, bike or walk
-                                    Keep your engine tuned, and don’t let your engine idle
-                                    When refueling: stop when the pump shuts off, avoid spilling fuel, and tighten your gas cap
-                                    Inflate tires to the recommended pressure
-                                    Use low-VOC paint and cleaning products, and seal and store them so they can’t evaporate
-                                    Watch for Air Quality Action Days in your area </p>
-                                <p className='recoms'>
+                                    <ul className='list'>
+                                        <li>Turn off lights you are not using.</li>
+                                        <li>Drive less: carpool, use public transportation, bike or walk.</li>
+                                        <li>Keep your engine tuned, and don’t let your engine idle.</li>
+                                        <li>When refueling: stop when the pump shuts off, avoid spilling fuel, and tighten your gas cap.</li>
+                                        <li>Inflate tires to the recommended pressure.</li>
+                                        <li>Use low-VOC paint and cleaning products, and seal and store them so they can’t evaporate.</li>
+                                        <li>Watch for Air Quality Action Days in your area.</li>
+                                    </ul> 
+                                </div>
+                                <div className='recoms'>
                                     Air Particles:
-                                    Drive less: carpool, use public transportation, bike or walk
-                                    Choose ENERGY STAR appliances
-                                    Set thermostats higher in summer and lower in winter
-                                    Don’t burn leaves, garbage, plastic or rubber
-                                    Keep car, boat and other engines tuned
-                                </p>
+                                    <ul className='list'>
+                                        <li>Choose ENERGY STAR appliances.</li>
+                                        <li>Set thermostats higher in summer and lower in winter.</li>
+                                        <li>Don’t burn leaves, garbage, plastic or rubber.</li>
+                                        <li>Drive less: carpool, use public transportation, bike or walk.</li>
+                                        <li>Keep car, boat and other engines tuned.</li>
+                                    </ul> 
+                                </div>
                             </div>
                             <div className='RecomsContainer'>
                                 <h3 className="RecTitle">Resources</h3>
-                                <p className='recoms'>
+                                <div className='recoms'>
                                     <ul className='list'>
                                         <li><a href="https://www.airnow.gov/aqi/aqi-basics/">Air Quality Index (AQI) Basics</a></li>
                                         <li><a href="https://www.airnow.gov/aqi/aqi-basics/using-air-quality-index/">Using the Air Quality Index</a></li>
@@ -67,7 +72,7 @@ function ResultsPage(props)
                                         <li><a href="https://www.airnow.gov/sites/default/files/2021-03/air-quality-guide_pm_2015_0.pdf">Air Quality Guide for Particle Pollution</a></li>
                                         <li><a href="http://www.aqmd.gov/home/air-quality/current-air-quality-data">Current Air Quality Data</a></li>
                                     </ul>
-                                </p>
+                                </div>
                             </div>
                         </div>
                     </div>

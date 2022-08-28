@@ -33,7 +33,7 @@ export default function ScoreMeter(props)
     else if (props.score <= 300)
     {
       setCurrColor("rgba(119, 52, 206, 1)");
-      setCurrGradient("background: radial-gradient(51.79% 51.79% at 35.38% 45.13%, rgba(135, 69, 220, 0) 26.04%, rgba(135, 69, 220, 0.5) 66.38%, #8745DC 100%)");
+      setCurrGradient("radial-gradient(51.79% 51.79% at 35.38% 45.13%, rgba(135, 69, 220, 0) 26.04%, rgba(135, 69, 220, 0.5) 66.38%, #8745DC 100%)");
     }
     else if (props.score <= 500)
     {
@@ -46,11 +46,11 @@ export default function ScoreMeter(props)
   {
     "height": size,
     "width": size,
-    "border-radius": size,
+    "borderRadius": size,
     "background": currGradient,
     "display": "flex",
-    "justify-content": "center",
-    "align-items": "center"
+    "justifyContent": "center",
+    "alignItems": "center"
   }
 
   let innerCircleStyle =
@@ -59,11 +59,11 @@ export default function ScoreMeter(props)
     "width": size * 0.75,
     "background": "white",
     "color": currColor,
-    "border-radius": size,
+    "borderRadius": size,
     "display": "flex",
-    "flex-direction": "column",
-    "justify-content": "center",
-    "align-items": "center"
+    "flexDirection": "column",
+    "justifyContent": "center",
+    "alignItems": "center"
   }
 
   return (
