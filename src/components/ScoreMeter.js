@@ -35,7 +35,7 @@ export default function ScoreMeter(props)
       setCurrColor("rgba(119, 52, 206, 1)");
       setCurrGradient("radial-gradient(51.79% 51.79% at 35.38% 45.13%, rgba(135, 69, 220, 0) 26.04%, rgba(135, 69, 220, 0.5) 66.38%, #8745DC 100%)");
     }
-    else if (props.score <= 500)
+    else if (props.score <= Infinity)
     {
       setCurrColor("rgba(100, 27, 135, 1)");
       setCurrGradient("radial-gradient(51.79% 51.79% at 35.38% 45.13%, rgba(100, 27, 135, 0) 27.75%, rgba(100, 27, 135, 0.55) 57.15%, #641B87 78.7%)");

@@ -36,6 +36,7 @@ p {
         border: 1px solid $background-color;
         border-radius: 1.5vh;
         padding: 2vh;
+        max-width: 300px;
     }
     .RecomsContainer {
         background-color: $recoms-color;
@@ -84,6 +85,9 @@ p {
 
 @media only screen and (min-width: 400px){
     .RecsContainer {
+        .blurb-container {
+            max-width: 380px;
+        }
         .RecomsContainer {
             width: 380px;
             .recoms {
@@ -95,6 +99,9 @@ p {
 
 @media only screen and (min-width: 500px){
     .RecsContainer {
+        .blurb-container {
+            max-width: 480px;
+        }
         .RecomsContainer {
             width: 480px;
             .recoms {
@@ -106,6 +113,9 @@ p {
 
 @media only screen and (min-width: 700px){
     .RecsContainer {
+        .blurb-container {
+            max-width: 600px;
+        }
         .RecomsContainer {
             width: 600px;
             .recoms {

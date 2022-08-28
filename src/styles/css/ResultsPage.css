@@ -38,6 +38,7 @@ p {
   border: 1px solid linear-gradient(to bottom, #EFF1F8, #EBEFFC);
   border-radius: 1.5vh;
   padding: 2vh;
+  max-width: 300px;
 }
 .RecsContainer .RecomsContainer {
   background-color: #d1e7fb;
@@ -82,6 +83,9 @@ p {
 }
 
 @media only screen and (min-width: 400px) {
+  .RecsContainer .blurb-container {
+    max-width: 380px;
+  }
   .RecsContainer .RecomsContainer {
     width: 380px;
   }
@@ -90,6 +94,9 @@ p {
   }
 }
 @media only screen and (min-width: 500px) {
+  .RecsContainer .blurb-container {
+    max-width: 480px;
+  }
   .RecsContainer .RecomsContainer {
     width: 480px;
   }
@@ -98,6 +105,9 @@ p {
   }
 }
 @media only screen and (min-width: 700px) {
+  .RecsContainer .blurb-container {
+    max-width: 600px;
+  }
   .RecsContainer .RecomsContainer {
     width: 600px;
   }
