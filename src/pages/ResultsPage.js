@@ -24,12 +24,9 @@ function ResultsPage(props)
             <div className='results-container'>
                 <div className="results-location-container">
                     <div className="results-location-icon-container">
-                        {/* <img src="https://i.imgur.com/1gOHVQX.png" alt="results-location-icon" className="results-location-icon" /> */}
                         <h2 id="city-state">{fixUppercase(props.city)}, {fixUppercase(props.USState)}</h2>
                     </div>
                     <div className='results-score-container'>
-                        {/* <p>Air Quality Score</p>
-                        <h1 className="AQIScore">{props.score}</h1> */}
                         <div className="results-score-meter-container">
                             <ScoreMeter score={props.score} />
                         </div>
@@ -39,7 +36,6 @@ function ResultsPage(props)
                 <div className="results-activity-container">
                     <Recs aqi={props.score} />
                     <div className='info-container'>
-
                         <div className="RecsContainer">
                             <div className='RecomsContainer'>
                                 <h3 className="RecTitle">How Can I Reduce Air Pollution?</h3>

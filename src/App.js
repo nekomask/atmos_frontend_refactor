@@ -8,17 +8,12 @@ import './App.css';
 
 function App()
 {
-  // CHANGE BACK BEFORE PUSH
   const [city, setCity] = useState("");
   const [USState, setUSState] = useState("");
   const [score, setScore] = useState(-1);
   const [err, setErr] = useState("");
   const [loading, setLoading] = useState(false);
 
-  /**
-   * ADD
-   * @returns ADD
-   */
   const getData = async function (e)
   {
     try
@@ -35,9 +30,7 @@ function App()
           'Content-Type': 'application/json'
         }
       });
-      console.log("RESPONSE:", response);
       let data = await response.json();
-      console.log("DATA:", data);
 
       if (response.ok === true) {
         setScore(data.air_quality);
