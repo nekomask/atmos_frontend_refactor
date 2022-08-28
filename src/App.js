@@ -12,6 +12,7 @@ function App()
   const [city, setCity] = useState("");
   const [USState, setUSState] = useState("");
   const [score, setScore] = useState(-1);
+  const [err, setErr] = useState("");
   const [loading, setLoading] = useState(false);
 
   /**
@@ -38,12 +39,24 @@ function App()
       let data = await response.json();
       console.log("DATA:", data);
 
-      setScore(data.air_quality);
+      if (response.ok === true) {
+        setScore(data.air_quality);
+      } else {
+        if (data.status === "fail" && data.data.message === "city_not_found") {
+          setErr("City not found: Please double check your entries and try again. Alternatively, try inputing your nearest major city.");
+        } else if (data.status === "fail" && data.data.message === "arguments_missing"){
+          setErr("Missing input: Please input both your city and state.");
+        } else {
+          setErr(`Error: ${data.data.message}`);
+        }
+      }
 
       setLoading(false);
     } catch (error)
     {
+      setLoading(false);
       console.error(error);
+      setErr(error.message);
     }
   }
 
@@ -59,6 +72,7 @@ function App()
                   setScore(-1);
                   setCity("");
                   setUSState("");
+                  setErr("");
                   }}>
                   <img src="https://i.imgur.com/UOFSsDV.png" alt="logo" className="logo-image" />
                 </div>
@@ -69,7 +83,8 @@ function App()
                     city={city}
                     setCity={setCity}
                     USState={USState}
-                    setUSState={setUSState} /> :
+                    setUSState={setUSState} 
+                    err={err}/> :
                   <ResultsPage
                     score={score}
                     setScore={setScore}

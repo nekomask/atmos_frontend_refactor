@@ -24,7 +24,7 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 350px;
+  width: 320px;
   text-align: center;
   font-family: "Inter", sans-serif;
 }
@@ -32,6 +32,10 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.landing-page .landing-location-container .get-started {
+  font-weight: bold;
+  margin-bottom: 5px;
 }
 .landing-page .landing-location-container .landing-form-container {
   display: flex;
@@ -67,7 +71,20 @@ html {
   transition: top ease 0.3s;
 }
 .landing-page .landing-location-container .landing-form-container button:hover {
-  top: -8px;
+  top: -4px;
+}
+
+.error-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 320px;
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  margin: 5px 0 10px 0;
+}
+.error-box .error-item {
+  color: #D61A3C;
 }
 
 /*# sourceMappingURL=LandingPage.css.map */

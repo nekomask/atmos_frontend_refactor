@@ -33,7 +33,13 @@ function LandingPage(props) {
         </p>
       </div>
       <div className="landing-location-container">
-        Get started here:
+        <p className="get-started">Get started here:</p>
+        {props.err && (
+          <div className="error-box">
+            <p className="error-item">{props.err}</p>
+          </div>
+        )}
+
         <form className="landing-form-container" onSubmit={props.getData}>
           <label htmlFor="form-input-city" />
           <input
