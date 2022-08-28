@@ -40,7 +40,7 @@ export default function ScoreMeter(props)
       setCurrColor("rgba(100, 27, 135, 1)");
       setCurrGradient("radial-gradient(51.79% 51.79% at 35.38% 45.13%, rgba(100, 27, 135, 0) 27.75%, rgba(100, 27, 135, 0.55) 57.15%, #641B87 78.7%)");
     }
-  }, []);
+  }, [props.score]);
 
   let outerCircleStyle =
   {
