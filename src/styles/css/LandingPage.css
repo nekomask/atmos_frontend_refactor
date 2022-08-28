@@ -55,7 +55,7 @@ html {
   outline: none;
 }
 .landing-page .landing-location-container .landing-form-container input::placeholder {
-  color: #b3b3b3;
+  color: gainsboro;
 }
 .landing-page .landing-location-container .landing-form-container button {
   margin-top: 10px;
