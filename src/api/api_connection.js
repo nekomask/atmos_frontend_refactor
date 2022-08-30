@@ -1,7 +1,7 @@
 // API location URL - ONLY UPDATE THIS ONE
-const BASE_URL = "http://localhost:3001"; // NEED TO ADD SITE URL ONLY
+const BASE_URL = "https://atmos-backend.fly.dev"; 
 
 // API data URL for requests
-const API_URL = BASE_URL + "/cache";  // NEED TO GET TO BASE ROUTE FOR API DATA
+const API_URL = BASE_URL + "/cache";
 
 export { API_URL };
