@@ -22,13 +22,14 @@ function App()
       setLoading(true);
       let response = await fetch(API_URL, {
         method: 'POST',
+        mode: 'cors',
         body: JSON.stringify({
           city: city,
           state: USState,
         }),
         headers: {
           'Content-Type': 'application/json'
-        }
+        },
       });
       let data = await response.json();
 
