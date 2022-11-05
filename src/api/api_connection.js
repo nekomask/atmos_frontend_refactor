@@ -1,5 +1,5 @@
 // API location URL - ONLY UPDATE THIS ONE
-const BASE_URL = "https://atmos-eywc.onrender.com"; 
+const BASE_URL = "https://atmos-backend.onrender.com"; 
 
 // API data URL for requests
 const API_URL = BASE_URL + "/cache";
